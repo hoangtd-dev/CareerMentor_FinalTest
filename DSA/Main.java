@@ -2,6 +2,7 @@ public class Main {
 	public static void main(String[] args) {
 		System.out.println("result: " + solve(new int[] { 4, 2, 2, 3, 1, 4, 7, 8, 9 }));
 		System.out.println("result: " + solve(new int[] { 1, 1, 1, 1, 1 }));
+		System.out.println("result: " + solve(new int[] { 9, 8, 7, 6, 5, 4, 3, 2, 1 }));
 		System.out.println("result: " + solve(new int[] { 8, 8, 8, 8, 8, 8, 8, 9, 10 }));
 		System.out.println("result: " + solve(new int[] { 7, 7, 7, 7, 7, 7, 7, 7, 7, 9 }));
 	}
@@ -22,7 +23,7 @@ public class Main {
 			// "left[" + left + "]:" + arr[left] + " - start[" + start + "]:" + arr[start] +
 			// " - right[" + right + "]:"
 			// + arr[right]);
-			if (arr[start] < arr[left] || arr[start] >= arr[right]) {
+			if (arr[start] < arr[left] || arr[start] > arr[right] || (arr[start] == arr[right] && start < right)) {
 				start++;
 				left = 0;
 				right = arr.length - 1;
